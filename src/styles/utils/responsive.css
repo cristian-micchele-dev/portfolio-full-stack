@@ -1,0 +1,28 @@
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    section {
+        padding: 60px 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-container,
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
