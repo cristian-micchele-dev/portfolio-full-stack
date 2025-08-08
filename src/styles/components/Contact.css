@@ -338,3 +338,225 @@
     font-size: var(--font-size-base);
   }
 }
+
+/* Estilos para redes sociales */
+/* Estilos para redes sociales - LOGOS PEQUEÑOS */
+.contact__social {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(123, 104, 238, 0.2);
+  text-align: center;
+}
+
+.contact__social-title {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.contact__social-links {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__social-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__social-logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scale(0.8);
+}
+
+.contact__social-logo:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.contact__social-logo:hover .social-icon {
+  transform: scale(1.1);
+}
+
+/* Estilos específicos para LinkedIn - LOGO PEQUEÑO */
+.contact__social-logo.linkedin {
+  color: #0077b5;
+  background: rgba(0, 119, 181, 0.1);
+  border: 1px solid rgba(0, 119, 181, 0.2);
+}
+
+.contact__social-logo.linkedin::before {
+  background: #0077b5;
+}
+
+.contact__social-logo.linkedin:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+/* Estilos específicos para GitHub - MISMO TAMAÑO QUE LINKEDIN */
+.contact__social-logo.github {
+  color: #ffffff;
+  background: linear-gradient(135deg, #24292e, #1a1e22);
+  border: 2px solid #24292e;
+  box-shadow: 0 4px 15px rgba(36, 41, 46, 0.4);
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.contact__social-logo.github::before {
+  background: linear-gradient(135deg, #333, #24292e);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.contact__social-logo.github:hover {
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(36, 41, 46, 0.5);
+  border-color: #ffffff;
+}
+
+.contact__social-logo.github .social-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) brightness(1.2);
+  fill: #ffffff;
+}
+
+.contact__social-logo.github:hover .social-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4)) brightness(1.4);
+}
+
+/* Efecto de brillo sutil para GitHub */
+.contact__social-logo.github {
+  animation: github-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes github-glow {
+  0% {
+    box-shadow: 0 4px 15px rgba(36, 41, 46, 0.4);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(36, 41, 46, 0.6);
+  }
+}
+
+/* Responsive - mismo tamaño que LinkedIn */
+@media screen and (max-width: 768px) {
+  .contact__social-logo.github {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .contact__social-logo.github .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact__social-logo.github {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .contact__social-logo.github .social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Estilos específicos para LinkedIn */
+.contact__social-link.linkedin {
+  color: #0077b5;
+  border-color: rgba(0, 119, 181, 0.3);
+  background: rgba(0, 119, 181, 0.1);
+}
+
+.contact__social-link.linkedin::before {
+  background: linear-gradient(135deg, #0077b5, #005885);
+}
+
+.contact__social-link.linkedin:hover {
+  color: white;
+  border-color: #0077b5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 119, 181, 0.3);
+}
+
+/* Estilos específicos para GitHub */
+.contact__social-link.github {
+  color: #333;
+  border-color: rgba(51, 51, 51, 0.3);
+  background: rgba(51, 51, 51, 0.1);
+}
+
+.contact__social-link.github::before {
+  background: linear-gradient(135deg, #333, #24292e);
+}
+
+.contact__social-link.github:hover {
+  color: white;
+  border-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(51, 51, 51, 0.3);
+}
+
+/* Responsive para redes sociales */
+@media screen and (max-width: 768px) {
+  .contact__social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact__social-link {
+    width: 100%;
+    justify-content: center;
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact__social-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-xs);
+  }
+  
+  .contact__social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
